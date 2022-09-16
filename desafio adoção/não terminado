@@ -1,0 +1,78 @@
+# DDM-25-12-22
+
+import 'package:flutter/material.dart';
+
+const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: darkBlue,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: MyWidget(),
+        ),
+      ),
+    );
+  }
+}
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container (height: 300, 
+     child: ListView (
+      scrollDirection: Axis.horizontal,
+      children: <Widget> [
+        
+        card ('data:image/jpeg;base64,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', 'Tigrinho', '2 anos', 'Adoção em PE'),
+        card ('https://doglife.doglife.com.br/api/1/blog/doglife/blogFacade/assets/6282cd16a037b01682f42c5d/gato-preto-capa.jpg?w=480', 'Pandora', '5 anos', 'Adoção em MG'),
+        card ('https://cdn.los-animales.org/fotos/3295057_539117-gato-siames.jpg', 'Lily', '6 meses', 'Adoção em SP'),
+        card ('https://cdn.los-animales.org/fotos/416353461_3747534-filhote-de-gato-persa-branco-macho-puroparceloentrego-em-curitiba-e-regiao.jpg', 'Killua', '8 anos','Adoção em SC'),
+        card ('https://www.bnews.com.br/media/_versions/janeiro_2022/ae5281db-8e32-488d-a825-a6b0a095c822_widemd.jpg', 'Goiaba','3 anos','SP'),
+        card ('https://i.pinimg.com/236x/e7/dc/04/e7dc04976eb5c4b823a2b31c0c6e6b2c--tabby-cats-kitty-cats.jpg', 'Goiaba','3 anos','SP'),
+        card ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSizSrApG99iXDOE0_knyouDLup36VGSU2iRw&usqp=CAU', 'Deidara', '19 anos', 'Rio de Janeiro'),
+        card ('https://64.media.tumblr.com/e046ed0fd1f66f4e84cc811b2ded9ea9/tumblr_pu8dxli31Y1sx8ybdo5_400.png', 'Inosuke', '23 anos', 'SC'),
+        card ('https://pbs.twimg.com/media/EIEWofXXUAMSvY7.png', 'Yato', '21 anos', 'São Paulo'),
+        card ('https://64.media.tumblr.com/add609c63657e848b038031c6c95003e/9fb3e801f69478a3-46/s500x750/64f8c89bdb82d13164589454cc9947f61c4fa818.png', 'L Lawliet', '21 anos', 'São Paulo'),
+        
+      ],
+    ));
+  }
+}
+
+//card feito com container no qual contem uma img, 3 textos alteraveis 
+card (String img, String txt1, String txt2, String txt3 ) {
+  return Container ( 
+    decoration: BoxDecoration (
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(10)),
+    width: 300,
+    padding: const EdgeInsets.all(10.0),
+    margin: const EdgeInsets.all(10.0),
+    child: Row (mainAxisAlignment: MainAxisAlignment.spaceAround,children: [
+      Image.network(img, width: 120), 
+      Column (mainAxisAlignment: MainAxisAlignment.center,children: [
+        Text (txt1, 
+          style: TextStyle ( 
+            fontSize: 20,
+            color: Colors.grey)),
+        Text (txt2,
+            style: TextStyle ( 
+            fontSize: 20,
+            color: Colors.grey)),
+        Text (txt3,
+            style: TextStyle ( 
+            fontSize: 20,
+            color: Colors.grey)),
+      ])])
+  );
+}
